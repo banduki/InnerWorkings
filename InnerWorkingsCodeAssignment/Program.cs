@@ -25,7 +25,7 @@ namespace InnerWorkingsCodeAssignment
             var output = new JobCalculator(properties).Output;
             Console.WriteLine(output + "\n\n");
 
-            File.WriteAllText(outputFile, output);
+            File.WriteAllLines(outputFile, output.Split('\n'));
             Console.Write($"Wrote output to {outputFile}\n\n");
         }
     }
