@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace InnerWorkingsCodeAssignment
                 if (string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line))
                     continue;
 
-                if (line.Equals("extra-margin", StringComparison.InvariantCultureIgnoreCase))
+                if (line.Equals("extra-margin", StringComparison.CurrentCultureIgnoreCase))
                 {
                     isExtraMargin = true;
                     continue;
@@ -44,7 +44,7 @@ namespace InnerWorkingsCodeAssignment
 
                 var description = elements[0];
                 var cost = Convert.ToDecimal(elements[1]);
-                var isTaxExempt = elements.Length > 2 && elements[2].Equals("exempt", StringComparison.InvariantCultureIgnoreCase);
+                var isTaxExempt = elements.Length > 2 && elements[2].Equals("exempt", StringComparison.CurrentCultureIgnoreCase);
                 var newItem = new JobItem(description, cost, isTaxExempt);
 
                 items.Add(newItem);
